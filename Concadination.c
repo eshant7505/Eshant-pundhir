@@ -5,26 +5,22 @@
 #include <string.h>
 
 void concatenateStrings(char *result, const char *str1, const char *str2) {
-    // Copy the first string to the result buffer
+
     strcpy(result, str1);
 
-    // Concatenate the second string to the result buffer
     strcat(result, str2);
 }
 
 int main() {
-    // Define two strings
+
     char string1[100], string2[100];
 
-    // Input the first string
     printf("Enter the first string: ");
     scanf("%s", string1);
 
-    // Input the second string
     printf("Enter the second string: ");
     scanf("%s", string2);
 
-    // Concatenate the strings
     char result[200]; // Assuming the result can hold the concatenated strings
     concatenateStrings(result, string1, string2);
 
