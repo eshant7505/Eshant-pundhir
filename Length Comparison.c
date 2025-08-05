@@ -7,21 +7,20 @@
 int main() {
     char str1[100], str2[100];
 
-    // Input first string
+
     printf("Enter the first string: ");
     fgets(str1, sizeof(str1), stdin);
     
-    // Remove the newline character from the input
     str1[strcspn(str1, "\n")] = '\0';
 
-    // Input second string
+
     printf("Enter the second string: ");
     fgets(str2, sizeof(str2), stdin);
     
-    // Remove the newline character from the input
+
     str2[strcspn(str2, "\n")] = '\0';
 
-    // Compare string lengths
+
     int len1 = strlen(str1);
     int len2 = strlen(str2);
 
