@@ -7,22 +7,17 @@
 int main() {
     char str1[100], str2[100];
 
-    // Input first string
     printf("Enter the first string: ");
     fgets(str1, sizeof(str1), stdin);
 
-    // Input second string
     printf("Enter the second string: ");
     fgets(str2, sizeof(str2), stdin);
 
-    // Remove newline characters from the input
     strtok(str1, "\n");
     strtok(str2, "\n");
 
-    // Compare the strings using strcmp
     int result = strcmp(str1, str2);
 
-    // Check the result of comparison
     if (result == 0) {
         printf("The strings are equal.\n");
     } else if (result < 0) {
