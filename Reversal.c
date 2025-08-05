@@ -4,13 +4,11 @@
 #include <stdio.h>
 #include <string.h>
 
-// Function to reverse a string
 void reverseString(char str[]) {
     int length = strlen(str);
     int start = 0;
     int end = length - 1;
 
-    // Swap characters from the beginning and end towards the center
     while (start < end) {
         char temp = str[start];
         str[start] = str[end];
@@ -22,22 +20,17 @@ void reverseString(char str[]) {
 }
 
 int main() {
-    // Maximum length of the input string
     int maxLength = 100;
     
     char inputString[maxLength];
 
-    // Get input from the user
     printf("Enter a string: ");
     fgets(inputString, maxLength, stdin);
 
-    // Remove the newline character from the input
     inputString[strcspn(inputString, "\n")] = '\0';
 
-    // Call the function to reverse the string
     reverseString(inputString);
 
-    // Display the reversed string
     printf("Reversed string: %s\n", inputString);
 
     return 0;
