@@ -2,14 +2,12 @@
 
 #include <stdio.h>
 
-// Function to calculate the determinant of a 3x3 matrix
 int determinant3x3(int matrix[3][3]) {
     return matrix[0][0] * (matrix[1][1] * matrix[2][2] - matrix[1][2] * matrix[2][1]) -
            matrix[0][1] * (matrix[1][0] * matrix[2][2] - matrix[1][2] * matrix[2][0]) +
            matrix[0][2] * (matrix[1][0] * matrix[2][1] - matrix[1][1] * matrix[2][0]);
 }
-
-// Function to calculate the inverse of a 3x3 matrix
+x
 void inverse(int matrix[3][3], float inverseMatrix[3][3]) {
     int det = determinant3x3(matrix);
 
@@ -18,7 +16,6 @@ void inverse(int matrix[3][3], float inverseMatrix[3][3]) {
         return;
     }
 
-    // Calculate the adjoint matrix
     int cofactorMatrix[3][3];
     for (int i = 0; i < 3; i++) {
         for (int j = 0; j < 3; j++) {
@@ -26,7 +23,6 @@ void inverse(int matrix[3][3], float inverseMatrix[3][3]) {
             int minorMatrix[2][2];
             int minorIndex = 0;
 
-            // Create the minor matrix for element matrix[i][j]
             for (int row = 0; row < 3; row++) {
                 for (int col = 0; col < 3; col++) {
                     if (row != i && col != j) {
@@ -36,12 +32,10 @@ void inverse(int matrix[3][3], float inverseMatrix[3][3]) {
                 }
             }
 
-            // Calculate the cofactor
             cofactorMatrix[i][j] = sign * determinant3x3(minorMatrix);
         }
     }
 
-    // Calculate the inverse matrix
     for (int i = 0; i < 3; i++) {
         for (int j = 0; j < 3; j++) {
             inverseMatrix[i][j] = (float)cofactorMatrix[j][i] / det;
@@ -50,20 +44,17 @@ void inverse(int matrix[3][3], float inverseMatrix[3][3]) {
 }
 
 int main() {
-    // Define a 3x3 matrix
+
     int matrix[3][3] = {
         {2, 3, -1},
         {4, 2, 0},
         {1, -1, 2}
     };
 
-    // Initialize a matrix to store the inverse
     float inverseMatrix[3][3];
 
-    // Calculate the inverse
     inverse(matrix, inverseMatrix);
 
-    // Print the inverse matrix
     printf("Inverse Matrix:\n");
     for (int i = 0; i < 3; i++) {
         for (int j = 0; j < 3; j++) {
