@@ -4,7 +4,6 @@
 #include <stdio.h>
 #include <string.h>
 
-// Function to calculate the length of a string
 int stringLength(const char *str) {
     int length = 0;
     while (str[length] != '\0') {
@@ -13,7 +12,6 @@ int stringLength(const char *str) {
     return length;
 }
 
-// Function to concatenate two strings
 void stringConcatenate(char *destination, const char *source) {
     int destLength = stringLength(destination);
     int i;
@@ -25,7 +23,6 @@ void stringConcatenate(char *destination, const char *source) {
     destination[destLength + i] = '\0';
 }
 
-// Function to reverse a string
 void stringReverse(char *str) {
     int length = stringLength(str);
     int start = 0;
@@ -43,18 +40,15 @@ void stringReverse(char *str) {
 }
 
 int main() {
-    // Example usage
+
     char str1[50] = "Hello";
     char str2[] = " World";
 
-    // Calculate and print the length of str1
     printf("Length of str1: %d\n", stringLength(str1));
 
-    // Concatenate str2 to str1 and print the result
     stringConcatenate(str1, str2);
     printf("Concatenated string: %s\n", str1);
 
-    // Reverse the concatenated string and print the result
     stringReverse(str1);
     printf("Reversed string: %s\n", str1);
 
