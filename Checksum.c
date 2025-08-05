@@ -1,11 +1,8 @@
- //Append file data with file checksum.
-
 
  #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-// Function to calculate checksum
 unsigned int calculateChecksum(const char *data) {
     unsigned int checksum = 0;
     while (*data) {
@@ -26,15 +23,13 @@ int main() {
         fprintf(stderr, "Error opening file '%s'\n", filename);
         return 1;
     }
-
-    // Write data to the file
+ 
     fprintf(file, "%s", data);
-
-    // Calculate and append checksum to the file
+ 
     unsigned int checksum = calculateChecksum(data);
     fprintf(file, "\nChecksum: %u\n", checksum);
 
-    // Close the file
+
     fclose(file);
 
     printf("Data written to file '%s' with checksum.\n", filename);
